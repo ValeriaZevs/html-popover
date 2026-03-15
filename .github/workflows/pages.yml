@@ -20,6 +20,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NODE_ENV: development
 
     steps:
       - uses: actions/checkout@v5
@@ -27,7 +29,7 @@ jobs:
         with:
           node-version: 24
           cache: npm
-      - run: npm install
+      - run: npm install --include=dev
       - run: npm run lint
       - run: npm test
       - run: npm run build
