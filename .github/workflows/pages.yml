@@ -30,6 +30,7 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm install --include=dev
+      - run: chmod +x node_modules/.bin/*
       - run: npm run lint
       - run: npm test
       - run: npm run build
